@@ -29,7 +29,7 @@ def get_registers():
 def add():
     customer_id = flask.request.form["customer_id"]
     item_id = flask.request.form["item_id"]
-    model.add(customer_id=customer_id)
+    model.add(customer_id=customer_id, item_id=item_id)
     response = dict(
         registers=model.registers, add=dict(customer_id=customer_id, item_id=item_id)
     )

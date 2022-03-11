@@ -1,6 +1,7 @@
 VENV := ./venv
 VENV_PYTHON := $(VENV)/bin/python3
 VENV_PIP := $(VENV)/bin/pip3
+model = "BaseModel"
 
 venv:
 	python3 -m venv $(VENV)
