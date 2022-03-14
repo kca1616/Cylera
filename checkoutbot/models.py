@@ -38,7 +38,6 @@ class BaseModel:
                 if portion < lowest_portion:
                     lowest_portion = portion
                     lowest_key = key
-
         self.customer_register_assignments[customer_id] = lowest_key
         return self.customer_register_assignments[customer_id]
 
@@ -64,6 +63,7 @@ class BaseModel:
                 if register_item == item:
                     self.registers[cust_reg].remove(item)
                     self.total_item_count -= 1
+                    break
 
     @staticmethod
     def get_model(model_name: str) -> Type["BaseModel"]:
