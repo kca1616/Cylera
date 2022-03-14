@@ -47,7 +47,8 @@ class BaseModel:
             - If the customer already has items on a register, select that register.
             - If the customer is new, select a register using the model.
         """
-        self._select_register(customer_id)
+        if customer_id not in self.customer_register_assignments.keys():
+            self._select_register(customer_id)
         register = self.customer_register_assignments[customer_id]
         self.registers[register].append(item_id)
         if customer_id not in self.customer_items.keys():
